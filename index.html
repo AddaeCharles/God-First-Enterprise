@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>God First Enterprise</title>
-    <link rel="stylesheet" href="index.css"></title>
+  <link rel="stylesheet" href="index.css">
+  </title>
 
   <!-- box icons -->
-   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" >
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <!-- custom css -->
-   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
 </head>
+<script>
+  function toggleMoreText(event) {
+    event.preventDefault();
+    const text = document.getElementById("moreText");
+    const btn = event.target;
+    if (text.style.display === "none") {
+      text.style.display = "block";
+      btn.textContent = "Read Less";
+    } else {
+      text.style.display = "none";
+      btn.textContent = "Read More";
+    }
+  }
+  function toggleServiceText(event, btn) {
+    event.preventDefault();
+    const serviceText = btn.nextElementSibling;
+    if (serviceText.style.display === "none") {
+      serviceText.style.display = "block";
+      btn.textContent = "Read Less";
+    } else {
+      serviceText.style.display = "none";
+      btn.textContent = "Read More";
+    }
+  }
+</script>
+
 <body>
 
- <!-- header dessign -->
- <header class="header">
-  <a href="#" class="logo">God First Enterprise</a>
+  <!-- header dessign -->
+  <header class="header">
+    <a href="#" class="logo">God First Enterprise</a>
 
-  <i class="bx bx-menu" id="menu-icon"></i>
+    <i class="bx bx-menu" id="menu-icon"></i>
 
-  <!-- navbar -->
-   <nav class="navbar">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#goods">Goods</a>
-    <a href="#contact">Contact</a>
-   </nav>
+    <!-- navbar -->
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#goods">Goods</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
- </header>
+  </header>
 
- <!-- home-section -->
+  <!-- home-section -->
   <section class="home" id="home">
     <div class="home-content">
       <h3>Akwaaba! Welcome to God First Enterprise</h3>
@@ -52,232 +80,274 @@
   </section>
 
   <!-- About-section design -->
-   <section class="about" id="about">
+  <section class="about" id="about">
     <div class="home-img">
       <img src="images/image2.jpg" alt="">
     </div>
     <div class="about-content">
       <h2 class="heading">About <span>Us</span></h2>
       <p>God First Enterprise is a Ghanaian-owned business dedicated to delivering high-quality products
-    across various categories — from electric brush scribers and Herbalife wellness items to church chairs,
-    smartphones, and laptops.</p>
+        across various categories — from electric brush scribers and Herbalife wellness items to church chairs,
+        smartphones, and laptops.</p>
       <div class="about-content">
         <h2 class="heading">Our <span>Mission</span></h2>
-      <p>
+        <p>
         <p>Our mission is to provide exceptional products that enhance your lifestyle and meet your needs.
-    We pride ourselves on our commitment to quality, customer satisfaction, and community engagement.</p>
-      <a href="#" class="btn">Read More</a>
-      </p>
+          We pride ourselves on our commitment to quality, customer satisfaction, and community engagement.</p>
+        <a href="#" class="btn" onclick="toggleMoreText(event)">Read More</a>
+        <p id="moreText" style="display: none; margin-top: 2rem;">
+          <strong>God First Enterprise is more than just a business — it's a mission.</strong><br><br>
+          We started with a vision to provide reliable, affordable, and high-quality goods to everyday Ghanaians and
+          beyond.
+          Whether it’s strong furniture for your events, durable electronics for your tech needs, or wellness products
+          to help you live better,
+          we carefully source our products to meet your expectations.
+          <br><br>
+          <strong>Why Choose Us?</strong><br>
+          • Trusted by hundreds of customers nationwide<br>
+          • Affordable pricing and flexible delivery options<br>
+          • Friendly customer support and guidance<br><br>
+          As we grow, we remain committed to integrity, excellence, and putting God first in all we do.
+          Thank you for being a part of our journey.
+        </p>
+        </p>
       </div>
     </div>
-   </section>
+  </section>
 
-   <!-- services design section -->
-    <section class="services" id="services">
-      <h2 class="heading">Our <span>Services</span></h2>
-      <div class="services-container">
-        <div class="services-box">
-          <i class='bx bx-cog'></i>
-          <h3>>Electric Tools Supply</h3>
-          <p>We supply durable electric brush scribers and tools for industrial and personal use at competitive prices.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="services-box">
-          <i class="bx bx-cube"></i>
-          <h3>Church & Event Furniture</h3>
-          <p>Strong, elegant chairs and furniture ideal for churches, conferences, weddings, and more.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-         <div class="services-box">
-          <i class="bx bx-leaf"></i>
-          <h3>Wellness & Herbalife Products</h3>
-          <p>We offer original Herbalife products to support your weight loss and healthy lifestyle goals.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="services-box">
-          <i class="bx bx-mobile-alt"></i>
-          <h3>Phones</h3>
-          <p>We offer a wide selection of original and slightly used phones to suit your style and budget.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="services-box">
-          <i class="bx bx-laptop"></i>
-          <h3>Laptops</h3>
-          <p>Browse our reliable laptops for work, school, or gaming — quality and affordability guaranteed.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-        <div class="services-box">
-          <i class="bx bx-buildings"></i>
-          <h3>Cement Supply</h3>
-          <p>We deliver trusted cement brands for construction projects of all sizes, right to your location.</p>
-          <a href="#" class="btn">Read More</a>
-        </div>
-        </div>
-    </section>
+  <!-- services design section -->
+  <section class="services" id="services">
+    <h2 class="heading">Our <span>Services</span></h2>
+    <div class="services-container">
+      <div class="services-box">
+        <i class='bx bx-cog'></i>
+        <h3>>Electric Tools Supply</h3>
+        <p>We supply durable electric brush scribers and tools for industrial and personal use at competitive prices.
+        </p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          From affordable smartphones to high-end flagships, we provide carefully selected models that are tested for
+          quality and performance.
+          Our team is always available to help you pick the perfect phone that fits your needs and budget. Whether it’s
+          for work, study, or personal use,
+          we’ve got you covered with flexible delivery options and support.
+        </p>
 
-    <!-- portfolio section design -->
-     <section class="goods" id="goods">
-      <h2 class="heading"> Available <span> Goods</span></h2>
+        </p>
+      </div>
+      <div class="services-box">
+        <i class="bx bx-cube"></i>
+        <h3>Church & Event Furniture</h3>
+        <p>Strong, elegant chairs and furniture ideal for churches, conferences, weddings, and more.</p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          We provide a wide range of church and event furniture, including chairs, tables, and decor items.
+          Our products are designed to be both functional and aesthetically pleasing, ensuring your events are
+          memorable.
 
-      <div class="portfolio-container">
-        <div class="portfolio-box">
-          <img src="images/image3.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/image4.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/image5.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/image6.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/image7.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/image9.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image10.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image11.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image12.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image13.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image14.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
-        </div>
-         <div class="portfolio-box">
-          <img src="images/image15.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
-            <a href="#" class="bx bx-link-external"></a>
-          </div>
+        </p>
+      </div>
+      <div class="services-box">
+        <i class="bx bx-leaf"></i>
+        <h3>Wellness & Herbalife Products</h3>
+        <p>We offer original Herbalife products to support your weight loss and healthy lifestyle goals.</p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          Our wellness section features a range of Herbalife products designed to help you achieve your health and
+          fitness goals.
+          From meal replacements to nutritional supplements, we provide original products that are safe and effective.
+          Our team is here to guide you on your wellness journey, ensuring you get the best results possible.
+        </p>
+      </div>
+      <div class="services-box">
+        <i class="bx bx-mobile-alt"></i>
+        <h3>Phones</h3>
+        <p>We offer a wide selection of original and slightly used phones to suit your style and budget.</p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          From affordable smartphones to high-end flagships, we provide carefully selected models that are tested for
+          quality and performance.
+          Our team is always available to help you pick the perfect phone that fits your needs and budget. Whether it’s
+          for work, study, or personal use,
+          we’ve got you covered with flexible delivery options and support.
+        </p>
+      </div>
+      <div class="services-box">
+        <i class="bx bx-laptop"></i>
+        <h3>Laptops</h3>
+        <p>Browse our reliable laptops for work, school, or gaming — quality and affordability guaranteed.</p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          Our laptop collection features a variety of brands and models, from budget-friendly options to high-performance
+          machines.
+          Whether you need a laptop for work, school, or gaming, we have something for everyone. Our team can help you
+          find the right laptop that meets your requirements and budget.
+        </p>
+      </div>
+      <div class="services-box">
+        <i class="bx bx-buildings"></i>
+        <h3>Cement Supply</h3>
+        <p>We deliver trusted cement brands for construction projects of all sizes, right to your location.</p>
+        <a href="#" class="btn" onclick="toggleServiceText(event, this)">Read More</a>
+        <p class="service-text" style="display: none;">
+          Our cement supply service ensures you get the best quality cement for your construction needs.
+          We work with trusted brands to provide you with reliable products that meet industry standards.
+          Whether you’re building a home, office, or any structure, we deliver directly to your site, ensuring you have
+          everything you need to get started.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goods section design -->
+  <section class="goods" id="goods">
+    <h2 class="heading"> Available <span> Goods</span></h2>
+
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <img src="images/image3.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
         </div>
       </div>
-     </section>
-     <!--<form action="https://formsubmit.co/your-email@example.com" method="POST">
-  <input type="hidden" name="_captcha" value="false">
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-  </div>
-  <div class="input-box">
-    <input type="tel" name="phone" placeholder="Mobile Number">
-    <input type="text" name="subject" placeholder="Email Subject">
-  </div>
-  <textarea name="message" rows="10" placeholder="Your Message" required></textarea>
-  <input type="submit" value="Send Message" class="btn">
-</form>
--->
-
-    
-     <!-- contact section design -->
-      <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form action="https://formsubmit.co/bb4bc3e9a0e9cd9c996f97e0408a2fe4" method="POST">
-  <input type="hidden" name="_captcha" value="false">
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-  </div>
-  <div class="input-box">
-    <input type="tel" name="phone" placeholder="Mobile Number">
-    <input type="text" name="subject" placeholder="Email Subject">
-  </div>
-  <textarea name="message" rows="10" placeholder="Your Message" required></textarea>
-  <input type="submit" value="Send Message" class="btn">
-</form>
-
-      </section>
-
-      <!-- footer Design -->
-       <footer class="footer">
-        <div class="footer-text">
-          <p>Copyright &copy; 2025 by <span>Addae</span> | All Rights Reserved.</p>
+      <div class="portfolio-box">
+        <img src="images/image4.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
         </div>
-        <div class="footer-iconTop">
-          <a href="#home"> <i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image5.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
         </div>
-       </footer>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image6.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image7.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image9.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image10.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image11.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image12.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image13.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image14.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+      <div class="portfolio-box">
+        <img src="images/image15.jpg" alt="">
+        <div class="portfolio-layer">
+          <!-- <h4>Web Design</h4> -->
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, similique!</p>
+          <a href="#" class="bx bx-link-external"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact section design -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <form action="https://formsubmit.co/bb4bc3e9a0e9cd9c996f97e0408a2fe4" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <div class="input-box">
+        <input type="tel" name="phone" placeholder="Mobile Number">
+        <input type="text" name="subject" placeholder="Email Subject">
+      </div>
+      <textarea name="message" rows="10" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+
+  </section>
+
+  <!-- footer Design -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>Copyright &copy; 2025 by <span></span> | All Rights Reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#home"> <i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
 
 
 
-       <!-- scroll reveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="index.js">
     // Get the menu icon and navbar elements
-const menuIcon = document.getElementById('menu-icon');
-const navbar = document.querySelector('.navbar');
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
 
-// Add an event listener to toggle the 'active' class on the navbar when the menu icon is clicked
-menuIcon.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
+    // Add an event listener to toggle the 'active' class on the navbar when the menu icon is clicked
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
 
   </script>
 </body>
+
 </html>
