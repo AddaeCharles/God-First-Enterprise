@@ -292,7 +292,7 @@ span{
   text-align: center;
   padding: 0 4rem;
   transform: translateY(100%);
-  transition: .5s ease;
+  transition:0.5s ease;
 }
 
 .portfolio-box:hover .portfolio-layer{
@@ -300,13 +300,13 @@ span{
 }
 
 .portfolio-layer h4{
-  font-size: 3rem;
+  font-size: 2rem;
 
 }
 
 .portfolio-layer p{
   font-size: 1.6rem;
-  margin: 3rem 0 1rem;
+  margin: 1rem 0 1rem;
 }
 
 .portfolio-layer  a{
