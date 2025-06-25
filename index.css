@@ -294,6 +294,7 @@ span{
   padding: 0 4rem;
   transform: translateY(100%);
   transition:0.5s ease;
+  scroll-behavior: smooth;
 }
 
 .portfolio-box:hover .portfolio-layer{
