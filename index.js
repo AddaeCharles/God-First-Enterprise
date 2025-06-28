@@ -54,4 +54,9 @@ ScrollReveal({
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 
+function toggleCeoImage(event) {
+  event.preventDefault();
+  const ceoSection = document.getElementById('ceoSection');
+  ceoSection.style.display = ceoSection.style.display === 'none' ? 'block' : 'none';
+}
 
