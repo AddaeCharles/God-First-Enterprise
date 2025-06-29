@@ -54,4 +54,11 @@ ScrollReveal({
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 
+function fillContactForm(element) {
+    const container = element.closest(".portfolio-layer");
+    const productName = container.querySelector("h4")?.textContent || "";
+    const productDescription = container.querySelector("p")?.textContent || "";
 
+    document.getElementById("contactProductName").value = productName;
+    document.getElementById("contactProductDescription").value = productDescription;
+  }
