@@ -54,11 +54,51 @@ ScrollReveal({
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
 
-function fillContactForm(element) {
-    const container = element.closest(".portfolio-layer");
-    const productName = container.querySelector("h4")?.textContent || "";
-    const productDescription = container.querySelector("p")?.textContent || "";
+function orderViaWhatsApp(element) {
+  const container = element.closest('.portfolio-layer');
+  const productName = container.querySelector('h4')?.textContent || "";
+  const productDesc = container.querySelector('p')?.textContent || "";
 
-    document.getElementById("contactProductName").value = productName;
-    document.getElementById("contactProductDescription").value = productDescription;
+  const message = `Hello! I'm interested in ordering:\n\n*${productName}*\n${productDesc}\n\nPlease provide pricing and availability information. Thank you!`;
+  const encodedMsg = encodeURIComponent(message);
+  const phoneNumber = "233546448842";
+
+  const waLink = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
+  window.open(waLink, '_blank');
+}
+
+// Toggle functions for read more/less
+function toggleMoreText(event) {
+  event.preventDefault();
+  const text = document.getElementById("moreText");
+  const btn = event.target;
+  if (text.style.display === "none") {
+    text.style.display = "block";
+    btn.textContent = "Read Less";
+  } else {
+    text.style.display = "none";
+    btn.textContent = "Read More";
   }
+}
+
+function toggleServiceText(event, btn) {
+  event.preventDefault();
+  const serviceText = btn.nextElementSibling;
+  if (serviceText.style.display === "none") {
+    serviceText.style.display = "block";
+    btn.textContent = "Read Less";
+  } else {
+    serviceText.style.display = "none";
+    btn.textContent = "Read More";
+  }
+}
+
+// Replace all fillContactForm calls with orderViaWhatsapp
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a[onclick*="fillContactForm"]');
+  links.forEach(link => {
+    link.setAttribute('onclick', 'orderViaWhatsapp(this)');
+    link.setAttribute('href', '#');
+  });
+});
+

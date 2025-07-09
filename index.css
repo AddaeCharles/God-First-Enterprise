@@ -307,6 +307,13 @@ span {
   color: var(--black-color);
 }
 
+.portfolio-layer .price {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
 .portfolio-layer h4 {
   font-size: 2rem;
 
@@ -618,5 +625,53 @@ span {
       width: 100%;
     }
   }
+  
 
+}
+
+/* WhatsApp Button Styles */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.floating-whatsapp a {
+  display: block;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+}
+
+.floating-whatsapp a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-contact-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-contact-btn:hover {
+  background-color: #128C7E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
 }
