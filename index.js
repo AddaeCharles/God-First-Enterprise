@@ -93,11 +93,11 @@ function toggleServiceText(event, btn) {
   }
 }
 
-// Replace all fillContactForm calls with orderViaWhatsapp
+// Replace all fillContactForm calls with orderViaWhatsApp
 document.addEventListener('DOMContentLoaded', function() {
   const links = document.querySelectorAll('a[onclick*="fillContactForm"]');
   links.forEach(link => {
-    link.setAttribute('onclick', 'orderViaWhatsapp(this)');
+    link.setAttribute('onclick', 'orderViaWhatsApp(this)');
     link.setAttribute('href', '#');
   });
 });

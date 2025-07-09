@@ -733,7 +733,7 @@
         <div class="portfolio-layer">
           <h4>Meteor Galaxy Projector</h4>
           <p>A decorative LED light device designed to transform your room into a starry night sky or cosmic space, combines colorful nebula clouds, stars and meteors effects.</p>
-          <a href="#" class="bx bx-link-external" onclick="orderViaWhatsapp(this)"></a>
+          <a href="#" class="bx bx-link-external" onclick="orderViaWhatsApp(this)"></a>
         </div>
       </div>
       <!-- <div class="portfolio-box">
@@ -896,16 +896,16 @@
 
   <!-- scroll reveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="index.js">
-    // Get the menu icon and navbar elements
-    const menuIcon = document.getElementById('menu-icon');
-    const navbar = document.querySelector('.navbar');
-
-    // Add an event listener to toggle the 'active' class on the navbar when the menu icon is clicked
-    menuIcon.addEventListener('click', () => {
-      navbar.classList.toggle('active');
+  <script src="index.js"></script>
+  <script>
+    // Fix all product links to use WhatsApp ordering
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[onclick*="fillContactForm"]');
+      links.forEach(link => {
+        link.setAttribute('onclick', 'orderViaWhatsApp(this)');
+        link.setAttribute('href', '#');
+      });
     });
-
   </script>
 </body>
 
