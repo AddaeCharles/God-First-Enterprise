@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God First Enterprise - QR Code</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            margin: 20px 0;
+        }
+        .qr-code img {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .download-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+        .url-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .generate-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .generate-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 God First Enterprise QR Code</h1>
+        
+        <div class="info">
+            <h3>Website URL Options:</h3>
+            <select id="urlSelect" class="url-input" onchange="updateUrl()" aria-label="Select website hosting option">
+                <option value="">-- Select your hosting option --</option>
+                <option value="https://addaecharles.github.io/God-First-Enterprise/">GitHub Pages (Free)</option>
+                <option value="https://godfirstenterprise.com/">Custom Domain (if you have one)</option>
+                <option value="https://netlify.app/">Netlify (Free hosting)</option>
+                <option value="https://vercel.app/">Vercel (Free hosting)</option>
+                <option value="custom">Custom URL</option>
+            </select>
+            <br>
+            <input type="text" id="websiteUrl" class="url-input" 
+                   placeholder="Enter your website URL or select from options above"
+                   style="display: none;">
+            <br>
+            <button class="generate-btn" onclick="generateQR()">Generate QR Code</button>
+        </div>
+
+        <div class="qr-code" id="qrCodeContainer">
+            <img id="qrCodeImage" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=file:///C:/Users/F%20I%20D%20E%20L%20I%20A/Desktop/GodFirst/GodFirstEnterprise/index.html" 
+                 alt="QR Code for God First Enterprise">
+        </div>
+
+        <div class="info">
+            <h3>📱 How to Use:</h3>
+            <p>1. Scan this QR code with your phone's camera</p>
+            <p>2. It will open the God First Enterprise website</p>
+            <p>3. Browse products and order via WhatsApp</p>
+        </div>
+
+        <a href="#" class="download-btn" onclick="downloadQR()">Download QR Code</a>
+        <a href="index.html" class="download-btn">Back to Website</a>
+    </div>
+
+    <script>
+        function updateUrl() {
+            const select = document.getElementById('urlSelect');
+            const urlInput = document.getElementById('websiteUrl');
+            const selectedValue = select.value;
+            
+            if (selectedValue === 'custom') {
+                urlInput.style.display = 'block';
+                urlInput.value = '';
+                urlInput.focus();
+            } else if (selectedValue) {
+                urlInput.style.display = 'block';
+                urlInput.value = selectedValue;
+            } else {
+                urlInput.style.display = 'none';
+            }
+        }
+
+        function generateQR() {
+            const url = document.getElementById('websiteUrl').value;
+            if (url) {
+                const qrImage = document.getElementById('qrCodeImage');
+                qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
+            } else {
+                alert('Please enter a valid website URL');
+            }
+        }
+
+        function downloadQR() {
+            const qrImage = document.getElementById('qrCodeImage');
+            const link = document.createElement('a');
+            link.download = 'god-first-enterprise-qr.png';
+            link.href = qrImage.src;
+            link.click();
+        }
+
+        // Generate QR code on page load
+        window.onload = function() {
+            // Set default to GitHub Pages
+            document.getElementById('urlSelect').value = 'https://addaecharles.github.io/God-First-Enterprise/';
+            document.getElementById('websiteUrl').value = 'https://addaecharles.github.io/God-First-Enterprise/';
+            document.getElementById('websiteUrl').style.display = 'block';
+            generateQR();
+        };
+    </script>
+</body>
+</html> 
