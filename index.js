@@ -95,7 +95,7 @@ function toggleServiceText(event, btn) {
 
 // Replace all fillContactForm calls with orderViaWhatsApp
 document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('a[onclick*="fillContactForm"]');
+  const links = document.querySelectorAll('a[onclick*="orderViaWhatsApp"]');
   links.forEach(link => {
     link.setAttribute('onclick', 'orderViaWhatsApp(this)');
     link.setAttribute('href', '#');
